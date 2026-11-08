@@ -244,24 +244,58 @@
     white-space: pre-wrap;
     word-break: keep-all;
   }
-  @media (max-width: 700px) {
-    .main-title {
-      font-size: 20pt;
+  @media (max-width: 900px) {
+    .section-box {
+      padding: 12px;
+      overflow: hidden;
+    }
+    .form-row {
+      flex-wrap: wrap !important;
+      gap: 6px;
     }
     .step-label {
-      width: 100%;
+      width: 100% !important;
+    }
+    .select-cat,
+    .select-question {
+      width: 100% !important;
+      max-width: 100% !important;
+      flex: none !important;
+      box-sizing: border-box;
+    }
+    .btn-right-end {
+      width: 100% !important;
+      box-sizing: border-box;
+    }
+    .vertical-nav-row {
+      flex-wrap: wrap !important;
+      gap: 8px;
     }
     .nav-spacer {
-      width: 0;
+      display: none !important;
     }
-    .select-question {
-      width: 100%;
+    .nav-btn-vertical {
+      flex: 1 1 45%;
+      width: auto !important;
+      box-sizing: border-box;
     }
-    .card-title-q, .card-title-a {
-      font-size: 16pt;
+    .vertical-nav-row .btn-primary {
+      width: 100% !important;
+      box-sizing: border-box;
     }
-    .card-body-q, .card-body-a {
-      font-size: 14.5pt;
+    .search-right-box {
+      width: 100% !important;
+      flex-wrap: wrap !important;
+      gap: 6px;
+    }
+    .search-label {
+      width: 100% !important;
+    }
+    .search-input {
+      flex: 1 1 auto !important;
+      width: auto !important;
+      min-width: 0 !important;
+      box-sizing: border-box;
     }
   }
 </style>
