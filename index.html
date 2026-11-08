@@ -244,24 +244,92 @@
     white-space: pre-wrap;
     word-break: keep-all;
   }
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
+    .app-container {
+      padding: 10px 10px 20px 10px;
+    }
+    .header-bar {
+      flex-wrap: wrap;
+    }
     .main-title {
-      font-size: 20pt;
+      font-size: 18pt;
+      line-height: 1.3;
+    }
+    .section-box {
+      padding: 12px;
+      overflow: hidden;
+    }
+    .form-row {
+      flex-wrap: wrap !important;
+      gap: 8px;
     }
     .step-label {
       width: 100%;
+      font-size: 12pt;
+    }
+    .select-cat,
+    .select-question {
+      width: 100% !important;
+      max-width: 100% !important;
+      flex: none !important;
+      font-size: 11.5pt;
+      box-sizing: border-box;
+    }
+    .search-right-box {
+      width: 100%;
+      margin-left: 0;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .search-label {
+      width: 100%;
+      margin-left: 0;
+      font-size: 11.5pt;
+    }
+    .search-input {
+      flex: 1;
+      min-width: 0;
+      width: auto;
+      font-size: 11.5pt;
+    }
+    .btn-right-end {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .vertical-nav-row {
+      flex-wrap: wrap;
+      gap: 8px;
     }
     .nav-spacer {
-      width: 0;
+      display: none;
     }
-    .select-question {
+    .nav-btn-vertical {
+      flex: 1 1 46%;
+      width: auto;
+      font-size: 10.5pt;
+      padding: 8px 6px;
+    }
+    .vertical-nav-row .btn-primary {
       width: 100%;
+      text-align: center;
     }
-    .card-title-q, .card-title-a {
-      font-size: 16pt;
+    .card-question,
+    .card-answer {
+      padding: 14px 16px;
     }
-    .card-body-q, .card-body-a {
-      font-size: 14.5pt;
+    .card-title-q,
+    .card-title-a {
+      font-size: 14pt;
+    }
+    .card-body-q,
+    .card-body-a {
+      font-size: 13pt;
+      line-height: 1.55;
+    }
+    .puppy-avatar {
+      width: 52px;
+      height: 48px;
+      margin-right: 12px;
     }
   }
 </style>
