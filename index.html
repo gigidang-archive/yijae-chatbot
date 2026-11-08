@@ -124,48 +124,45 @@
     background: #FFFFFF;
     color: #111111;
   }
-  .search-right-box {
-    margin-left: auto;
+  .search-bottom-row {
     display: flex;
     align-items: center;
-    gap: 8px;
+    margin-top: 10px;
+  }
+  .search-right-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     flex-shrink: 0;
   }
   .search-label {
-    font-size: 12.5pt;
     font-weight: bold;
-    color: #7D3C98;
+    color: #5D4037;
+    font-size: 10.5pt;
+    white-space: nowrap;
   }
   .search-input {
     font-family: inherit;
-    font-size: 12.5pt;
-    padding: 6px 10px;
-    width: 210px;
-    border: 1.5px solid #90A4AE;
-    border-radius: 5px;
-  }
-  .select-question {
-    font-family: inherit;
-    font-size: 12.5pt;
-    font-weight: bold;
-    padding: 7px 10px;
-    flex: 1;
-    min-width: 0;
-    border: 1.5px solid #1E8449;
-    border-radius: 5px;
-    background: #FFFFFF;
-    color: #111111;
+    font-size: 10.5pt;
+    padding: 5px 8px;
+    width: 220px;
+    border: 1px solid #BDC3C7;
+    border-radius: 4px;
+    box-sizing: border-box;
   }
   .btn-right-end {
-    width: 122px;
+    width: 104px;
     text-align: center;
+    padding-left: 0;
+    padding-right: 0;
     flex-shrink: 0;
   }
   .vertical-nav-row {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 18px;
-    margin-top: 10px;
+    gap: 28px;
+    margin-top: 8px;
   }
   .nav-spacer {
     width: 165px;
@@ -308,10 +305,14 @@
       width: auto;
       font-size: 10.5pt;
       padding: 8px 6px;
+      box-sizing: border-box;
     }
-    .vertical-nav-row .btn-primary {
+    .nav-btn-random,
+    .nav-btn-home {
+      flex: 1 1 100%;
       width: 100%;
       text-align: center;
+      box-sizing: border-box;
     }
     .card-question,
     .card-answer {
@@ -341,32 +342,34 @@
   </div>
 
   <div class="section-box">
-    <div class="section-legend">
-      <span>■ 궁금한 분야와 질문을 골라보세요 (질문을 선택하면 즉시 아래에 답변이 나타납니다)</span>
+    <div class="guide-label">■ 궁금한 분야와 질문을 골라보세요 (질문을 선택하면 즉시 아래에 답변이 나타납니다)</div>
+
+    <div class="form-row">
+      <div class="step-label">1단계 [주제 분야] :</div>
+      <select id="catSelect" class="select-cat" onchange="onCategorySelect()"></select>
     </div>
 
     <div class="form-row">
-      <div class="step-label label-step1">1단계 [주제 분야] :</div>
-      <select id="cmbCategory" class="select-cat" onchange="onCategoryChange()"></select>
-      <div class="search-right-box">
-        <span class="search-label">🔍 질문 단어 찾기 :</span>
-        <input type="text" id="entFilter" class="search-input" placeholder="예: 안경, 과거, 냉면..." oninput="onFilterSearch()">
-        <button class="btn btn-right-end" onclick="resetFilter()">전체 보기</button>
-      </div>
-    </div>
-
-    <div class="form-row" style="margin-bottom: 8px;">
-      <div class="step-label label-step2">2단계 [질문 선택] :</div>
-      <select id="cmbQuestion" class="select-question" onchange="runSelectedQuestion()"></select>
+      <div class="step-label">2단계 [질문 선택] :</div>
+      <select id="qSelect" class="select-question" onchange="onQuestionSelect()"></select>
       <button class="btn btn-primary btn-right-end" onclick="runSelectedQuestion()">답변 보기 ▶</button>
     </div>
 
     <div class="vertical-nav-row">
       <div class="nav-spacer"></div>
-      <button class="btn nav-btn-vertical" onclick="showWelcomeGuide()">🏠 처음 안내로</button>
       <button class="btn nav-btn-vertical" onclick="prevQuestion()">◀ 이전 질문</button>
       <button class="btn nav-btn-vertical" onclick="nextQuestion()">다음 질문 ▶</button>
-      <button class="btn btn-primary" style="padding: 6px 20px; font-size: 11pt;" onclick="pickRandomQuestion()">🎲 랜덤 호기심 질문 뽑기</button>
+      <button class="btn btn-primary nav-btn-random" style="padding: 6px 20px; font-size: 11pt;" onclick="pickRandomQuestion()">🎲 랜덤 호기심 질문 뽑기</button>
+      <button class="btn nav-btn-vertical nav-btn-home" onclick="showWelcomeGuide()">🏠 처음 안내로</button>
+    </div>
+
+    <div class="search-bottom-row">
+      <div class="nav-spacer"></div>
+      <div class="search-right-box">
+        <span class="search-label">🔍 질문 단어 찾기 :</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="예: 안경, 과거, 냉면..." oninput="onSearchChange()">
+        <button class="btn btn-right-end" onclick="resetSearch()">전체 보기</button>
+      </div>
     </div>
   </div>
 
